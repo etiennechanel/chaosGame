@@ -24,7 +24,7 @@ def chaos(nbDot, posDir):
         color = direction[2]
         drawDot(x0, y0, color)
         if i%(nbDot/100) == 0:
-            print(int((i/10000)),"%")
+            print(int((i/(nbDot/100))),"%")
             can1.update()
         i = i+1
     """print ("start saving postscript image ")
