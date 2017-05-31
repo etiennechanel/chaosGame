@@ -23,7 +23,7 @@ def chaos(nbDot, posDir):
         y0 =  (direction [1]+y0)/2
         color = direction[2]
         drawDot(x0, y0, color)
-        if i%(nbDot/100) == 0:
+        if i%(nbDot/10) == 0:
             print(int((i/(nbDot/100))),"%")
             can1.update()
         i = i+1
@@ -51,4 +51,4 @@ can1 = Canvas(fen1,bg='black',height=1000,width=1000)
 can1.pack()
 
 # choose how many dots you want to display
-chaos(1000000, posDir)
+chaos(100000, posDir)
