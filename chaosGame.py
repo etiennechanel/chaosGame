@@ -9,15 +9,6 @@ from random import randrange
 def drawDot(x, y, color):
     can1.create_oval(x, y, x+1, y+1, fill=color, outline='') #can1.create_line(x0,y0,x0+1,y0+1,fill=color, outline='')
     #can1.create_line(x0+1,y0,x0,y0+1,fill=color, outline='')
-
-def drawPoly(polyX, color):
-    pts = []
-    for i in range(len(polyX)):
-        xy = polyX[i]
-        pts.append(xy [0])
-        pts.append(xy [1])
-    can1.create_polygon(pts, fill=color, outline='') 
-    can1.update()
     
 def chaos(polyX, nbDot):
     x0, y0 = xWidth / 2, yHeigh / 2
@@ -40,8 +31,7 @@ def chaos(polyX, nbDot):
 #variables
 xWidth = 600
 yHeigh = 600
-bgColor = 'white'
-polyColor= 'black'
+bgColor = 'black'
 #each polygon point coordonates and color
 A = (xWidth * 0.5, yHeigh * 0.1, 'cyan')
 B = (xWidth * 0.9, yHeigh * 0.3, 'blue')
@@ -56,9 +46,5 @@ polyX = (A, B, C, D, E, F)
 fen1 = Tk()
 can1 = Canvas(fen1, bg=bgColor, height=yHeigh, width=xWidth)
 can1.pack()
-
-drawPoly(polyX, polyColor)
 chaos(polyX, 100000)
-
-can1.update()
 fen1.mainloop()
