@@ -1,50 +1,62 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 #chaosGame.py
-#Etienne_Chanel 03/06/17
+#Etienne_Chanel 03/15/18
+
 from tkinter import *
 from random import randrange
 
+#image file name 
+name = 'chaosGame01'
+#number of dots to display
+dotsNumber = 100000
+#display size
+width = 1000
+height = 800
+#background color
+bgColor = 'black'
+#def polygon points coordinates and color
+A = (0, height * 0.5, 'green')
+B = (width / 4, height, 'yellow')
+C = (width / 4 * 3, height, 'red')
+D = (width, height * 0.5, 'magenta')
+E = (width / 4 * 3,  0, 'blue')
+F = (width / 4, 0, 'cyan')
+
+polygone = (A, B, C, D, E, F)
+center = (width / 2, height / 2, '')
+
 #fonctions
 def drawDot(x, y, color):
-    can1.create_oval(x, y, x+1, y+1, fill=color, outline='') #can1.create_line(x0,y0,x0+1,y0+1,fill=color, outline='')
-    #can1.create_line(x0+1,y0,x0,y0+1,fill=color, outline='')
+    can1.create_oval(x, y, x+2, y+2, fill=color, outline='')
     
-def chaos(polyX, nbDot):
-    x0, y0 = xWidth / 2, yHeigh / 2
-    for i in range(nbDot):
-        rollAdie = randrange(len(polyX))
-        direction = polyX[rollAdie]
+def chaos(polygon, dotsNumber):
+    x0, y0 = width / 2, height / 2
+    direction = center
+    color = direction[2]
+    
+    for i in range(dotsNumber):
+        hazard = randrange(len(polygone))
+        direction = polygone[hazard]
         x0 =  (direction [0]+x0)/2
         y0 =  (direction [1]+y0)/2
         color = direction[2]
         drawDot(x0, y0, color)
-        if i%(nbDot/10) == 0:
-            print(int((i/(nbDot/100))),"%")
+        
+        if i%(1000) == 0:
             can1.update()
-    """print ("start saving postscript image ")
-    can1.update()
-    can1.postscript(file="file_name.ps", colormode='color')
-    print ("postscript image file save")"""
-    return(print(nbDot, " dots have been displayed"))
-    
-#variables
-xWidth = 600
-yHeigh = 600
-bgColor = 'black'
-#each polygon point coordonates and color
-A = (xWidth * 0.5, yHeigh * 0.1, 'cyan')
-B = (xWidth * 0.9, yHeigh * 0.3, 'blue')
-C = (xWidth * 0.9, yHeigh * 0.7, 'magenta')
-D = (xWidth * 0.5, yHeigh * 0.9, 'red')
-E = (xWidth * 0.1, yHeigh * 0.7, 'yellow')
-F = (xWidth * 0.1, yHeigh * 0.3, 'green')
-#make a polygon
-polyX = (A, B, C, D, E, F) 
+            print (i, "DOTS")
+            
+    #print ("tkinter is saving postscript image, ... ")
+    #can1.update()
+    #can1.postscript(file= name +".ps", colormode='color')
+    #print (name, "has been saved")
+    return(print(dotsNumber, " dots have been displayed"))
 
-#program
+
+#run
 fen1 = Tk()
-can1 = Canvas(fen1, bg=bgColor, height=yHeigh, width=xWidth)
+can1 = Canvas(fen1, bg=bgColor, height=height, width=width)
 can1.pack()
-chaos(polyX, 100000)
+chaos(polygone, dotsNumber)
 fen1.mainloop()
