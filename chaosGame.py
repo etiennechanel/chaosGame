@@ -7,7 +7,7 @@ from tkinter import *
 from random import randrange
 
 #image file name 
-name = 'chaosGame01'
+name = 'chaosGameImage'
 #number of dots to display
 dotsNumber = 100000
 #display size
