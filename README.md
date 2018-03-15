@@ -1,4 +1,4 @@
-# chaosGame
+# Chaos Game
 ## Edit Sierpinski Polygone Fractal
 * Use python3 and tkinter.
 * Play the Chaos game, create some fractals and display them in real time.
