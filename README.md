@@ -5,18 +5,12 @@
 * Save your image in a PostScript document.
 
 ### This chaos game consist of:
-* Randomly choose a direction (point A, B, C, ...)
-    * change polygone
-    * edit coordinates
-* From current position go halfway to this direction
-    * change the rules
-    * change the probability
-* Display a color dot depending on the direction
-    * pick some colors
+* Randomly choose a direction (point A, B, C, ...).
+* From current position go halfway to this direction.
+* Display a dot, the color change depending on the direction.
 * Save a postscript image after it display thousands of dots
     * uncomment to enable
 
 #### A picture is worth a readme:
-
 ![alt text](https://github.com/etiennechanel/chaosGame/blob/master/exSierpinski.png?raw=true "Sierpinski")
 ![alt text](https://github.com/etiennechanel/chaosGame/blob/master/exHexa.png?raw=true "Vasarely")
