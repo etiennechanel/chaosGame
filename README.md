@@ -12,5 +12,6 @@
     * uncomment to enable
 
 #### A picture is worth a readme:
+![alt text](https://github.com/etiennechanel/chaosGame/blob/master/chaosGame01.png0
 ![alt text](https://github.com/etiennechanel/chaosGame/blob/master/exSierpinski.png?raw=true "Sierpinski")
 ![alt text](https://github.com/etiennechanel/chaosGame/blob/master/exHexa.png?raw=true "Vasarely")
